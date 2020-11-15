@@ -3,21 +3,29 @@ import { Controller } from 'stimulus'
 import StimulusReflex from 'stimulus_reflex'
 
 export default class extends Controller {
-  connect () {
+  connect() {
     StimulusReflex.register(this)
   }
 
-  beforeReflex (element, reflex) {
+  beforeReflex(element, reflex) {
+    console.log("beforeReflex", element, reflex);
     document
       .querySelectorAll('[data-activity-indicator]')
       .forEach(el => (el.hidden = false))
   }
 
-  reflexError (element, reflex, error) {
+  afterReflex(element, reflex) {
+    console.log("afterReflex", element, reflex);
+    document
+      .querySelectorAll('[data-activity-indicator]')
+      .forEach(el => (el.hidden = true))
+  }
+
+  reflexError(element, reflex, error) {
     alert(`Error invoking a Reflex! ${error}`)
   }
 
-  reload () {
+  reload() {
     Turbolinks.visit(location.href)
   }
 }

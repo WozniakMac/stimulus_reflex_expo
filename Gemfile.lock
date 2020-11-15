@@ -239,11 +239,11 @@ GEM
     standard (0.5.2)
       rubocop (~> 0.89.1)
       rubocop-performance (~> 1.7.1)
-    stimulus_reflex (3.3.0.pre3)
-      cable_ready (>= 4.1.2)
+    stimulus_reflex (3.4.0.pre3)
       nokogiri
       rack
       rails (>= 5.2)
+      redis
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -315,7 +315,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq (~> 6.0)
   standard
-  stimulus_reflex (= 3.3.0.pre3)
+  stimulus_reflex (= 3.4.0.pre3)
   tmuxinator
   valid_email (~> 0.1)
   web-console (>= 3.3.0)
